@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
 Agent platform update checks.
 
-Last run: `2026-06-02T21:34+08:00`
+Last run: `2026-06-04T20:32+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -40,7 +40,7 @@ notes, or reproduction.
     early January 2016.
   - First official source:
     <https://openai.com/index/introducing-openai/>
-- Checked through: `2026-06-02`
+- Checked through: `2026-06-04`
 - Canonical source families:
   - News / historical blog archive: <https://openai.com/news/>
   - RSS: <https://openai.com/news/rss.xml>
@@ -81,6 +81,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-03 | Reusable prompts, Evals platform, and Agent Builder deprecation notices | <https://developers.openai.com/api/docs/deprecations>; <https://developers.openai.com/api/docs/changelog> | Relevant to future OpenAI-platform guidance: avoid new local workflows depending on reusable prompt objects, Evals dashboard/API, or Agent Builder. No immediate local Codex skill/runtime mutation needed. | checked |
 | 2026-06-01 | OpenAI models available in Amazon Bedrock through OpenAI-compatible Responses API endpoint | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/api/docs/production-best-practices/amazon-bedrock> | Relevant to future provider-routing or Bedrock deployment discussions. No local Codex skill, registry, MCP, or permission architecture change needed without a user request to use Bedrock. | checked |
 | 2026-05 | Secure MCP Tunnel | <https://developers.openai.com/api/docs/changelog> | Relevant to private/on-prem MCP access for Codex, Responses API, and AgentKit; proposal-only for future local MCP architecture. | checked |
 | 2026-05-07 | OpenAI Developers plugin for Codex | <https://developers.openai.com/api/docs/changelog> | Relevant to Codex plugin/API setup guidance, but no immediate local skill-package mutation required. | checked |
