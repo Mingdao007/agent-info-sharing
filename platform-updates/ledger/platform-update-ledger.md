@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
 Agent platform update checks.
 
-Last run: `2026-06-04T20:32+08:00`
+Last run: `2026-06-05T02:25+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -40,7 +40,7 @@ notes, or reproduction.
     early January 2016.
   - First official source:
     <https://openai.com/index/introducing-openai/>
-- Checked through: `2026-06-04`
+- Checked through: `2026-06-05`
 - Canonical source families:
   - News / historical blog archive: <https://openai.com/news/>
   - RSS: <https://openai.com/news/rss.xml>
@@ -96,7 +96,7 @@ Recent checked entries:
   - Andrej Karpathy publicly reported joining Anthropic: `2026-05-19`
   - First official source:
     <https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems>
-- Checked through: `2026-06-02`
+- Checked through: `2026-06-05`
 - Canonical source families:
   - Anthropic Newsroom: <https://www.anthropic.com/news>
   - Anthropic Research: <https://www.anthropic.com/research>
@@ -177,6 +177,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-03 | Claude Code 2.1.162: agents JSON waiting state, explicit Grep/Glob tools, persistent effort confirmation, WebFetch rule precedence | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local subagent observability, user-visible default-setting confirmations, and explicit permission-rule precedence. Proposal-only; no direct Codex skill or registry change. | checked |
 | 2026-06-02 | Incremental check: no Week 23 Claude Code digest yet | <https://code.claude.com/docs/en/whats-new> | Official What's New page still surfaced Week 22 (`2026-05-25` to `2026-05-29`) as the newest weekly digest. No new local architecture action. | checked |
 | 2026-05-19 | Karpathy joins Anthropic; GitHub source tracked under Anthropic/Claude | <https://github.com/karpathy> | Relevant as an Anthropic engineer source for LLM training, agent workflow, and tooling ideas. Use as discovery/context only unless a specific repo artifact and local need justify a proposal. | checked |
 | 2026-05-25..29 | Dynamic workflows and skill reload behavior | <https://code.claude.com/docs/en/whats-new/2026-w22> | Relevant to future workflow/subagent architecture and skill reload expectations; proposal-only for local Codex skills. | checked |
@@ -193,7 +194,7 @@ Recent checked entries:
   - First official sources:
     <https://github.com/NousResearch/hermes-agent>
     <https://hermes-agent.nousresearch.com/docs/>
-- Checked through: `2026-06-02`
+- Checked through: `2026-06-05`
 - Canonical source families:
   - Official docs root: <https://hermes-agent.nousresearch.com/docs/>
   - LLM-readable docs index:
@@ -246,7 +247,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-05 | Incremental check: no release/tag newer than `v2026.5.29.2` | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Confirms no new release-level migration signal after the prior ledger boundary. No local Codex skill, registry, or safety-gate change. | checked |
 | 2026-06-02 | Dashboard refresh-token sessions, Skills & Tools pane consolidation, and default streaming config discoverability | <https://github.com/NousResearch/hermes-agent/commit/c10ccaaf51a7146c7079e318cc20e4ab3f1a190d>; <https://github.com/NousResearch/hermes-agent/commit/a2b8e430e851bd7c77600fbafe3bc6cd5035e616>; <https://github.com/NousResearch/hermes-agent/commit/d78d77e46053e65cf8960760a1438a33553377ab> | Relevant as proposal-only comparison material for auth refresh flows, combined skills/tool management UI, and explicit streaming configuration. No local Codex skill, registry, or safety-gate write is justified by these commits alone. | checked |
 | 2026-06-02 | Incremental check: no release/tag newer than `v2026.5.29.2` | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Confirms no new release-level migration signal after the `2026-06-01` ledger boundary; only unreleased main-branch commits were considered as proposal-only signals. | checked |
 | 2026-06-01 | Hermes Agent source group added to skill-sync ledger | <https://hermes-agent.nousresearch.com/docs/llms.txt> | Relevant to future comparisons around self-improving skills, persistent memory, context files, subagent delegation, hooks, MCP, checkpoints, and agent runtime safety. Keep as proposal-only; do not migrate Hermes runtime state or auto-writing behavior into Codex without explicit approval. | checked |
-
