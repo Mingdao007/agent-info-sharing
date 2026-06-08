@@ -173,6 +173,7 @@ Recent checked entries:
   - <https://github.com/karpathy>
   - <https://github.com/karpathy/autoresearch>
   - <https://github.com/karpathy/nanochat>
+  - <https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills>
 
 Recent checked entries:
 
@@ -180,6 +181,7 @@ Recent checked entries:
 |---|---|---|---|---|
 | 2026-06-06 | Claude Code 2.1.166/2.1.167: fallback models, deny-rule globbing, and cross-session authority hardening | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local model fallback design, permission-rule precision, and subagent/cross-session authority boundaries. Proposal-only; no direct Codex skill or registry write. | checked |
 | 2026-06-03 | Claude Code 2.1.162: agents JSON waiting state, explicit Grep/Glob tools, persistent effort confirmation, WebFetch rule precedence | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local subagent observability, user-visible default-setting confirmations, and explicit permission-rule precedence. Proposal-only; no direct Codex skill or registry change. | checked |
+| 2026-06-03 | Lessons from building Claude Code: How we use skills | <https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills> | Relevant practice evidence for skill folder structure, gotchas, verification, progressive disclosure, functional skill categories, usage logging, and marketplace governance. Treat the nine categories as functional taxonomy, not as lifecycle tier schema. | checked |
 | 2026-06-02 | Incremental check: no Week 23 Claude Code digest yet | <https://code.claude.com/docs/en/whats-new> | Official What's New page still surfaced Week 22 (`2026-05-25` to `2026-05-29`) as the newest weekly digest. No new local architecture action. | checked |
 | 2026-05-19 | Karpathy joins Anthropic; GitHub source tracked under Anthropic/Claude | <https://github.com/karpathy> | Relevant as an Anthropic engineer source for LLM training, agent workflow, and tooling ideas. Use as discovery/context only unless a specific repo artifact and local need justify a proposal. | checked |
 | 2026-05-25..29 | Dynamic workflows and skill reload behavior | <https://code.claude.com/docs/en/whats-new/2026-w22> | Relevant to future workflow/subagent architecture and skill reload expectations; proposal-only for local Codex skills. | checked |
