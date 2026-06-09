@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
 Agent platform update checks.
 
-Last run: `2026-06-08T11:20+08:00`
+Last run: `2026-06-09T16:15+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -40,7 +40,7 @@ notes, or reproduction.
     early January 2016.
   - First official source:
     <https://openai.com/index/introducing-openai/>
-- Checked through: `2026-06-08`
+- Checked through: `2026-06-09`
 - Canonical source families:
   - News / historical blog archive: <https://openai.com/news/>
   - RSS: <https://openai.com/news/rss.xml>
@@ -81,6 +81,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-09 | Incremental check: no new OpenAI architecture update after Jun 8 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/subagents> | Changelog and Codex subagent docs were reachable. No new post-`2026-06-08` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-08 | Incremental check: no OpenAI changelog item newer than Jun 4 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/> | Changelog and Codex docs were reachable; no new post-`2026-06-05` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-03 | Reusable prompts, Evals platform, and Agent Builder deprecation notices | <https://developers.openai.com/api/docs/deprecations>; <https://developers.openai.com/api/docs/changelog> | Relevant to future OpenAI-platform guidance: avoid new local workflows depending on reusable prompt objects, Evals dashboard/API, or Agent Builder. No immediate local Codex skill/runtime mutation needed. | checked |
 | 2026-06-01 | OpenAI models available in Amazon Bedrock through OpenAI-compatible Responses API endpoint | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/api/docs/production-best-practices/amazon-bedrock> | Relevant to future provider-routing or Bedrock deployment discussions. No local Codex skill, registry, MCP, or permission architecture change needed without a user request to use Bedrock. | checked |
@@ -97,7 +98,7 @@ Recent checked entries:
   - Andrej Karpathy publicly reported joining Anthropic: `2026-05-19`
   - First official source:
     <https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems>
-- Checked through: `2026-06-08`
+- Checked through: `2026-06-09`
 - Canonical source families:
   - Anthropic Newsroom: <https://www.anthropic.com/news>
   - Anthropic Research: <https://www.anthropic.com/research>
@@ -179,6 +180,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-09 | Incremental check: no new Anthropic/Claude architecture update after Jun 8 | <https://www.anthropic.com/news>; <https://github.com/karpathy> | Anthropic Newsroom and Karpathy GitHub were reachable. No new post-`2026-06-08` local skill, subagent, MCP, memory, permission, or workflow architecture change was found. | checked |
 | 2026-06-06 | Claude Code 2.1.166/2.1.167: fallback models, deny-rule globbing, and cross-session authority hardening | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local model fallback design, permission-rule precision, and subagent/cross-session authority boundaries. Proposal-only; no direct Codex skill or registry write. | checked |
 | 2026-06-03 | Claude Code 2.1.162: agents JSON waiting state, explicit Grep/Glob tools, persistent effort confirmation, WebFetch rule precedence | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local subagent observability, user-visible default-setting confirmations, and explicit permission-rule precedence. Proposal-only; no direct Codex skill or registry change. | checked |
 | 2026-06-03 | Lessons from building Claude Code: How we use skills | <https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills> | Relevant practice evidence for skill folder structure, gotchas, verification, progressive disclosure, functional skill categories, usage logging, and marketplace governance. Treat the nine categories as functional taxonomy, not as lifecycle tier schema. | checked |
@@ -198,7 +200,7 @@ Recent checked entries:
   - First official sources:
     <https://github.com/NousResearch/hermes-agent>
     <https://hermes-agent.nousresearch.com/docs/>
-- Checked through: `2026-06-08`
+- Checked through: `2026-06-09`
 - Canonical source families:
   - Official docs root: <https://hermes-agent.nousresearch.com/docs/>
   - LLM-readable docs index:
@@ -251,6 +253,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-09 | Incremental check: no Hermes release update after Jun 8 | <https://github.com/NousResearch/hermes-agent/releases> | GitHub releases page was reachable. No new post-`2026-06-08` Hermes release-level signal requiring local Codex skill, registry, memory, or automation changes was found. | checked |
 | 2026-06-06 | Hermes Agent v0.16.0 / v2026.6.5 Surface Release | <https://github.com/NousResearch/hermes-agent/releases/tag/v2026.6.5>; <https://hermes-agent.nousresearch.com/docs/llms.txt> | Relevant as proposal-only comparison material for desktop surfaces, remote gateway auth, browser admin panels, MCP/credential management UI, trimmed default skill sets, trusted skill taps, fuzzy model pickers, and `/undo`. No local Codex runtime migration or auto-writing loop is justified without explicit approval. | checked |
 | 2026-06-05 | Incremental check: no release/tag newer than `v2026.5.29.2` | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Confirms no new release-level migration signal after the prior ledger boundary. No local Codex skill, registry, or safety-gate change. | checked |
 | 2026-06-02 | Dashboard refresh-token sessions, Skills & Tools pane consolidation, and default streaming config discoverability | <https://github.com/NousResearch/hermes-agent/commit/c10ccaaf51a7146c7079e318cc20e4ab3f1a190d>; <https://github.com/NousResearch/hermes-agent/commit/a2b8e430e851bd7c77600fbafe3bc6cd5035e616>; <https://github.com/NousResearch/hermes-agent/commit/d78d77e46053e65cf8960760a1438a33553377ab> | Relevant as proposal-only comparison material for auth refresh flows, combined skills/tool management UI, and explicit streaming configuration. No local Codex skill, registry, or safety-gate write is justified by these commits alone. | checked |
