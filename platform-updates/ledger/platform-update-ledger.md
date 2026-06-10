@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
 Agent platform update checks.
 
-Last run: `2026-06-09T16:15+08:00`
+Last run: `2026-06-11T01:06+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -40,7 +40,7 @@ notes, or reproduction.
     early January 2016.
   - First official source:
     <https://openai.com/index/introducing-openai/>
-- Checked through: `2026-06-09`
+- Checked through: `2026-06-11`
 - Canonical source families:
   - News / historical blog archive: <https://openai.com/news/>
   - RSS: <https://openai.com/news/rss.xml>
@@ -81,6 +81,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-10 | Codex changelog: performance improvements, Computer Use startup readiness, appshot error reporting, and UI fixes | <https://developers.openai.com/codex/changelog> | Relevant as proposal-only evidence for local diagnostics and visual/browser reliability expectations. No immediate skill registry mutation needed; keep this as context for agent-doctor and browser/appshot troubleshooting checks. | checked |
 | 2026-06-09 | Incremental check: no new OpenAI architecture update after Jun 8 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/subagents> | Changelog and Codex subagent docs were reachable. No new post-`2026-06-08` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-08 | Incremental check: no OpenAI changelog item newer than Jun 4 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/> | Changelog and Codex docs were reachable; no new post-`2026-06-05` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-03 | Reusable prompts, Evals platform, and Agent Builder deprecation notices | <https://developers.openai.com/api/docs/deprecations>; <https://developers.openai.com/api/docs/changelog> | Relevant to future OpenAI-platform guidance: avoid new local workflows depending on reusable prompt objects, Evals dashboard/API, or Agent Builder. No immediate local Codex skill/runtime mutation needed. | checked |
@@ -98,7 +99,7 @@ Recent checked entries:
   - Andrej Karpathy publicly reported joining Anthropic: `2026-05-19`
   - First official source:
     <https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems>
-- Checked through: `2026-06-09`
+- Checked through: `2026-06-11`
 - Canonical source families:
   - Anthropic Newsroom: <https://www.anthropic.com/news>
   - Anthropic Research: <https://www.anthropic.com/research>
@@ -180,6 +181,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-09 | New in Claude Managed Agents: scheduled agents and environment variable vaults | <https://claude.com/blog> | Relevant as proposal-only comparison material for future automation governance, scheduled agent review, secret handling, and agent-doctor monitoring. Do not create or migrate local automations without explicit user approval and local safety review. | checked |
 | 2026-06-09 | Incremental check: no new Anthropic/Claude architecture update after Jun 8 | <https://www.anthropic.com/news>; <https://github.com/karpathy> | Anthropic Newsroom and Karpathy GitHub were reachable. No new post-`2026-06-08` local skill, subagent, MCP, memory, permission, or workflow architecture change was found. | checked |
 | 2026-06-06 | Claude Code 2.1.166/2.1.167: fallback models, deny-rule globbing, and cross-session authority hardening | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local model fallback design, permission-rule precision, and subagent/cross-session authority boundaries. Proposal-only; no direct Codex skill or registry write. | checked |
 | 2026-06-03 | Claude Code 2.1.162: agents JSON waiting state, explicit Grep/Glob tools, persistent effort confirmation, WebFetch rule precedence | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local subagent observability, user-visible default-setting confirmations, and explicit permission-rule precedence. Proposal-only; no direct Codex skill or registry change. | checked |
@@ -200,7 +202,7 @@ Recent checked entries:
   - First official sources:
     <https://github.com/NousResearch/hermes-agent>
     <https://hermes-agent.nousresearch.com/docs/>
-- Checked through: `2026-06-09`
+- Checked through: `2026-06-11`
 - Canonical source families:
   - Official docs root: <https://hermes-agent.nousresearch.com/docs/>
   - LLM-readable docs index:
@@ -253,6 +255,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-06-11 | Incremental check: no Hermes release newer than v2026.6.5 found | <https://github.com/NousResearch/hermes-agent/releases>; <https://hermes-agent.nousresearch.com/docs/> | Confirms no new release-level local architecture signal beyond the already recorded Surface Release. Continue treating Hermes features as proposal-only comparison material. | checked |
 | 2026-06-09 | Incremental check: no Hermes release update after Jun 8 | <https://github.com/NousResearch/hermes-agent/releases> | GitHub releases page was reachable. No new post-`2026-06-08` Hermes release-level signal requiring local Codex skill, registry, memory, or automation changes was found. | checked |
 | 2026-06-06 | Hermes Agent v0.16.0 / v2026.6.5 Surface Release | <https://github.com/NousResearch/hermes-agent/releases/tag/v2026.6.5>; <https://hermes-agent.nousresearch.com/docs/llms.txt> | Relevant as proposal-only comparison material for desktop surfaces, remote gateway auth, browser admin panels, MCP/credential management UI, trimmed default skill sets, trusted skill taps, fuzzy model pickers, and `/undo`. No local Codex runtime migration or auto-writing loop is justified without explicit approval. | checked |
 | 2026-06-05 | Incremental check: no release/tag newer than `v2026.5.29.2` | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Confirms no new release-level migration signal after the prior ledger boundary. No local Codex skill, registry, or safety-gate change. | checked |
