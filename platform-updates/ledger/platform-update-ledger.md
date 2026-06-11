@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
 Agent platform update checks.
 
-Last run: `2026-06-11T01:06+08:00`
+Last run: `2026-06-11T23:58+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -82,6 +82,7 @@ Recent checked entries:
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
 | 2026-06-10 | Codex changelog: performance improvements, Computer Use startup readiness, appshot error reporting, and UI fixes | <https://developers.openai.com/codex/changelog> | Relevant as proposal-only evidence for local diagnostics and visual/browser reliability expectations. No immediate skill registry mutation needed; keep this as context for agent-doctor and browser/appshot troubleshooting checks. | checked |
+| 2026-06-11 | Incremental check: no OpenAI architecture update after Jun 9 | <https://developers.openai.com/api/docs/changelog> | OpenAI API changelog was reachable. The latest listed item remained the Jun 9 Responses web-search image-result update; no new post-`2026-06-09` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-09 | Incremental check: no new OpenAI architecture update after Jun 8 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/subagents> | Changelog and Codex subagent docs were reachable. No new post-`2026-06-08` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-08 | Incremental check: no OpenAI changelog item newer than Jun 4 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/> | Changelog and Codex docs were reachable; no new post-`2026-06-05` local Codex skill, registry, MCP, permission, or safety-gate architecture change was found. | checked |
 | 2026-06-03 | Reusable prompts, Evals platform, and Agent Builder deprecation notices | <https://developers.openai.com/api/docs/deprecations>; <https://developers.openai.com/api/docs/changelog> | Relevant to future OpenAI-platform guidance: avoid new local workflows depending on reusable prompt objects, Evals dashboard/API, or Agent Builder. No immediate local Codex skill/runtime mutation needed. | checked |
@@ -182,6 +183,8 @@ Recent checked entries:
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
 | 2026-06-09 | New in Claude Managed Agents: scheduled agents and environment variable vaults | <https://claude.com/blog> | Relevant as proposal-only comparison material for future automation governance, scheduled agent review, secret handling, and agent-doctor monitoring. Do not create or migrate local automations without explicit user approval and local safety review. | checked |
+| 2026-06-11 | Claude Code 2.1.173: Fable 5 1M suffix normalization and Windows sandbox warning fix | <https://code.claude.com/docs/en/changelog> | Relevant only as comparison material for model-name normalization and startup warning hygiene. No local Codex skill, registry, or robot-workflow mutation needed. | checked |
+| 2026-06-10 | Claude Code 2.1.172: nested subagents, model/permission fixes, and subagent observability fixes | <https://code.claude.com/docs/en/changelog> | Relevant as proposal-only comparison material for delegated-agent depth limits, subagent status visibility, model allowlists, permission-rule precision, and memory lookup in remote sessions. Existing local `subagent-goal` authority boundaries remain adequate; no immediate local architecture write required. | checked |
 | 2026-06-09 | Incremental check: no new Anthropic/Claude architecture update after Jun 8 | <https://www.anthropic.com/news>; <https://github.com/karpathy> | Anthropic Newsroom and Karpathy GitHub were reachable. No new post-`2026-06-08` local skill, subagent, MCP, memory, permission, or workflow architecture change was found. | checked |
 | 2026-06-06 | Claude Code 2.1.166/2.1.167: fallback models, deny-rule globbing, and cross-session authority hardening | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local model fallback design, permission-rule precision, and subagent/cross-session authority boundaries. Proposal-only; no direct Codex skill or registry write. | checked |
 | 2026-06-03 | Claude Code 2.1.162: agents JSON waiting state, explicit Grep/Glob tools, persistent effort confirmation, WebFetch rule precedence | <https://code.claude.com/docs/en/changelog> | Relevant as comparison material for local subagent observability, user-visible default-setting confirmations, and explicit permission-rule precedence. Proposal-only; no direct Codex skill or registry change. | checked |
