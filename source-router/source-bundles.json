@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-22",
+  "purpose": "Local source-router registry for proposal-only source recommendations during skill-sync runs.",
+  "defaults": {
+    "trigger_context": "skill-sync only",
+    "local_repo_mode": "index-only",
+    "checked_through": "2026-06-22"
+  },
+  "bundles": [
+    {
+      "id": "robotics.ft_sensor",
+      "title": "Robotics force/torque sensor sources",
+      "domain": "robotics",
+      "trigger_terms": [
+        "ati",
+        "bota",
+        "force torque",
+        "force-torque",
+        "ft sensor",
+        "f/t sensor",
+        "netft",
+        "robotiq",
+        "schunk",
+        "six axis force",
+        "torque sensor",
+        "wrench"
+      ],
+      "recommended_when": "The session discusses force/torque sensors, WrenchStamped data, robot contact force measurement, ATI Net F/T, Bota, SCHUNK, Robotiq, or ROS2 force/torque broadcasting.",
+      "checked_through": "2026-06-22",
+      "sources": [
+        {
+          "id": "ros2-control-force-torque-sensor-broadcaster",
+          "title": "ros2_control Force Torque Sensor Broadcaster",
+          "role": "ros2_control integration baseline",
+          "official_docs": [
+            "https://control.ros.org/rolling/doc/ros2_controllers/force_torque_sensor_broadcaster/doc/userdoc.html"
+          ],
+          "official_repos": [
+            "https://github.com/ros-controls/ros2_controllers"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "mature-official",
+          "trust_rule": "Use as the first ROS 2 interface baseline for publishing force/torque state interfaces as WrenchStamped; verify ROS distro and controller version before operational guidance.",
+          "notes": "Includes sensor_filter_chain support in current rolling docs."
+        },
+        {
+          "id": "ros-drivers-ati-netft",
+          "title": "ATI Net F/T ROS driver",
+          "role": "ATI Net F/T driver baseline",
+          "official_docs": [],
+          "official_repos": [],
+          "major_org_repos": [
+            "https://github.com/ros-drivers/ati_netft_ros_driver"
+          ],
+          "community_repos": [],
+          "maturity": "mature-major-org-ros1",
+          "trust_rule": "Treat ros-drivers as a major ROS organization source, not ATI official; verify ROS version and protocol support before recommending it for a current ROS 2 stack.",
+          "notes": "Useful baseline for ATI NET/FT RDT over Ethernet; not a universal ATI SDK replacement."
+        },
+        {
+          "id": "bota-ft-stack",
+          "title": "Bota FT Stack",
+          "role": "Bota Systems official driver/docs",
+          "official_docs": [
+            "https://code.botasys.com/en/gen_a/layer1/driver/driver.html",
+            "https://code.botasys.com/en/gen_a/layer1/driver/driver_ros2.html",
+            "https://code.botasys.com/en/gen_a/layer1/driver/driver_ros2_standard_node.html"
+          ],
+          "official_repos": [
+            "https://gitlab.com/botasys/bota_driver",
+            "https://gitlab.com/botasys/drivers/bota_driver_ros2_example",
+            "https://gitlab.com/botasys/drivers/bota_driver_ros2_control_example"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "mature-official",
+          "trust_rule": "Use Bota docs and Botasys GitLab as official; verify generation, communication interface, and ROS2 package version before local hardware instructions.",
+          "notes": "Bota docs cover C++, Python, and ROS2 driver paths."
+        },
+        {
+          "id": "schunk-force-torque-sensor",
+          "title": "SCHUNK force torque sensor ROS2 driver",
+          "role": "SCHUNK official ROS2 driver",
+          "official_docs": [
+            "https://github.com/SCHUNK-SE-Co-KG/schunk_force_torque_sensor#readme"
+          ],
+          "official_repos": [
+            "https://github.com/SCHUNK-SE-Co-KG/schunk_force_torque_sensor"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "emerging-official",
+          "trust_rule": "Treat SCHUNK-SE-Co-KG GitHub as official; verify sensor model, Ethernet interface box, and lifecycle behavior before use.",
+          "notes": "Official ROS2 driver for SCHUNK FTS hardware."
+        },
+        {
+          "id": "robotiq-force-torque",
+          "title": "Robotiq force torque ROS sources",
+          "role": "Robotiq legacy/community source coverage",
+          "official_docs": [
+            "https://wiki.ros.org/robotiq_force_torque_sensor"
+          ],
+          "official_repos": [],
+          "major_org_repos": [
+            "https://github.com/ros-industrial/robotiq"
+          ],
+          "community_repos": [
+            "https://github.com/nbfigueroa/robotiq_ft300_sensor",
+            "https://github.com/panagelak/rq_fts_ros2_driver"
+          ],
+          "maturity": "legacy-mixed",
+          "trust_rule": "Use ROS wiki and ros-industrial as historical/major-org context; keep small ROS2 drivers as community sources unless vendor ownership is verified.",
+          "notes": "Good for discovery and legacy behavior, not a default modern ROS2 recommendation without local validation."
+        }
+      ],
+      "notes": "Source recommendations are proposal-only; physical sensor setup still needs local electrical, transport, frame, calibration, and safety validation."
+    },
+    {
+      "id": "robotics.signal_filtering",
+      "title": "Robotics sensor noise filtering sources",
+      "domain": "robotics",
+      "trigger_terms": [
+        "butterworth",
+        "filter chain",
+        "filtering",
+        "force filter",
+        "low pass",
+        "low-pass",
+        "noise filtering",
+        "sensor filter",
+        "sensor_filter_chain",
+        "signal filter",
+        "wrench filtering",
+        "wrench smoothing"
+      ],
+      "recommended_when": "The session discusses filtering noisy sensor data, WrenchStamped smoothing, low-pass filters, Butterworth filters, ROS filter chains, or force/torque signal processing.",
+      "checked_through": "2026-06-22",
+      "sources": [
+        {
+          "id": "ros-filters",
+          "title": "ROS filters",
+          "role": "ROS filter-chain baseline",
+          "official_docs": [
+            "https://index.ros.org/p/filters/"
+          ],
+          "official_repos": [
+            "https://github.com/ros/filters"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "mature-official",
+          "trust_rule": "Use as the standard ROS filter-chain API baseline; verify ROS distro support and plugin availability before implementation guidance.",
+          "notes": "Provides a standardized interface for chaining filters from runtime parameters."
+        },
+        {
+          "id": "ros2-control-filter-chain",
+          "title": "ros2_control filter-chain integration",
+          "role": "ROS2 control filtering integration",
+          "official_docs": [
+            "https://control.ros.org/rolling/doc/ros2_controllers/force_torque_sensor_broadcaster/doc/userdoc.html",
+            "https://control.ros.org/rolling/doc/ros2_controllers/chained_filter_controller/doc/userdoc.html"
+          ],
+          "official_repos": [
+            "https://github.com/ros-controls/ros2_controllers"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "mature-official",
+          "trust_rule": "Use for ROS2 controller-level filtering proposals; verify controller version and filter plugin configuration before code changes.",
+          "notes": "ForceTorqueSensorBroadcaster supports sensor_filter_chain; Chained Filter Controller wraps filter_chain for controller interfaces."
+        },
+        {
+          "id": "scipy-signal",
+          "title": "SciPy signal processing",
+          "role": "offline analysis and filter design reference",
+          "official_docs": [
+            "https://docs.scipy.org/doc/scipy/reference/signal.html",
+            "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html",
+            "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"
+          ],
+          "official_repos": [
+            "https://github.com/scipy/scipy"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "maturity": "mature-official",
+          "trust_rule": "Use for offline filter design, log analysis, and parameter exploration; do not treat SciPy examples as real-time robot control guidance without latency and stability validation.",
+          "notes": "Useful for Butterworth/IIR/FIR analysis before translating parameters into ROS runtime filters."
+        }
+      ],
+      "notes": "Prefer ROS runtime filter chains for deployed robot paths and SciPy for offline analysis or parameter design."
+    }
+  ]
+}
