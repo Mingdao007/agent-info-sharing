@@ -321,3 +321,276 @@ Recent checked entries:
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
 | 2026-06-22 | Superpowers source group added to skill-sync ledger | <https://github.com/obra/Superpowers> | Relevant as proposal-only comparison material for agentic skills methodology, multi-harness plugin packaging, subagent-driven development, TDD workflow gates, and Codex/Claude/Cursor/Gemini skill portability. Do not import Superpowers methodology, hooks, or skill behavior into local Codex without explicit approval and local validation. | checked |
+
+### robotics-ecosystem
+
+- Coverage baseline:
+  - Optional source registry added on `2026-06-22` for broad robotics stacks,
+    simulator projects, ROS/MoveIt foundations, robot-learning frameworks, and
+    planning/dynamics libraries.
+  - Registry purpose: reusable source coverage for future robotics work; this
+    is not a new active skill and does not authorize local architecture writes.
+- Checked through: `2026-06-22`
+- Registry entries:
+  - id: universal-robots
+    category: manipulator-control-stack
+    official_docs:
+      - <https://www.universal-robots.com/developer/communication-protocol/ros-and-ros2-driver/>
+    official_github:
+      - <https://github.com/UniversalRobots>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use UR official docs and the UniversalRobots GitHub org as official sources; treat third-party UR forks and wrappers as community evidence only
+    checked_through: 2026-06-22
+    notes: official ROS/ROS2 driver and UR client library coverage.
+  - id: franka
+    category: manipulator-control-stack
+    official_docs:
+      - <https://frankarobotics.github.io/docs/>
+    official_github:
+      - <https://github.com/frankarobotics>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Franka FCI/libfranka/ROS2 docs and frankarobotics GitHub as official; verify robot-mode, safety, and torque-control claims against hardware docs before operational guidance
+    checked_through: 2026-06-22
+    notes: covers FCI, libfranka, and Franka ROS/ROS2 sources.
+  - id: kinova-kortex
+    category: manipulator-control-stack
+    official_docs:
+      - <https://github.com/Kinovarobotics/ros2_kortex#readme>
+    official_github:
+      - <https://github.com/Kinovarobotics/ros2_kortex>
+    community_repos: []
+    maturity: official-ros2-driver
+    trust_rule: treat Kinovarobotics GitHub repositories as official Kinova Kortex ROS2 sources; verify firmware/API compatibility before local robot instructions
+    checked_through: 2026-06-22
+    notes: Gen3/Kortex ROS2 entry point.
+  - id: kuka-lbr-iiwa
+    category: manipulator-control-stack
+    official_docs:
+      - <https://my.kuka.com/s/product/kuka-sunrisefri-25/01t1i000000tTEpAAM?language=en_US>
+    official_github: []
+    community_repos:
+      - <https://github.com/lbr-stack/lbr_fri_ros2_stack>
+    maturity: official-fri-community-ros2
+    trust_rule: KUKA Sunrise.FRI is the official source; lbr-stack and other iiwa ROS/ROS2 integrations must remain community_repos and must not be labeled official
+    checked_through: 2026-06-22
+    notes: official FRI availability plus community ROS2 integration; KUKA official GitHub driver source not recorded.
+  - id: ufactory-xarm
+    category: manipulator-control-stack
+    official_docs:
+      - <https://github.com/xArm-Developer/xarm_ros2#readme>
+    official_github:
+      - <https://github.com/xArm-Developer/xarm_ros2>
+    community_repos: []
+    maturity: official-ros2-driver
+    trust_rule: treat xArm-Developer GitHub as UFactory official source; verify hardware generation, firmware, and ROS distro support before operational guidance
+    checked_through: 2026-06-22
+    notes: xArm ROS2 developer package source.
+  - id: agilex-piper
+    category: manipulator-control-stack
+    official_docs:
+      - <https://github.com/agilexrobotics/piper_sdk#readme>
+      - <https://github.com/agilexrobotics/piper_ros#readme>
+    official_github:
+      - <https://github.com/agilexrobotics/piper_sdk>
+      - <https://github.com/agilexrobotics/piper_ros>
+    community_repos: []
+    maturity: emerging-official
+    trust_rule: AgileX SDK/ROS repos are usable official sources, but SDK, ROS, and LeRobot pipelines require local validation before operational claims
+    checked_through: 2026-06-22
+    notes: PiPER source coverage is available but newer than the mature industrial-arm stacks.
+  - id: trossen-interbotix
+    category: manipulator-control-stack
+    official_docs:
+      - <https://docs.trossenrobotics.com/interbotix_xsarms_docs/>
+    official_github:
+      - <https://github.com/Interbotix>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Trossen docs and Interbotix GitHub as official for X-Series/ViperX/ALOHA-related sources; verify product line because Trossen AI Arms and X-Series docs differ
+    checked_through: 2026-06-22
+    notes: covers Interbotix X-Series arms and related ROS/ROS2 packages.
+  - id: mujoco
+    category: simulator
+    official_docs:
+      - <https://mujoco.readthedocs.io/en/stable/>
+    official_github:
+      - <https://github.com/google-deepmind/mujoco>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use MuJoCo docs and google-deepmind/mujoco as official; distinguish MuJoCo/MJX behavior by version before simulator claims
+    checked_through: 2026-06-22
+    notes: core physics simulator and MJX-adjacent source.
+  - id: gazebo
+    category: simulator
+    official_docs:
+      - <https://gazebosim.org/libs/sim/>
+    official_github:
+      - <https://github.com/gazebosim/gz-sim>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Gazebo docs and gazebosim GitHub as official; distinguish modern Gazebo from Gazebo classic in guidance
+    checked_through: 2026-06-22
+    notes: modern Gazebo simulation stack.
+  - id: isaac-sim
+    category: simulator
+    official_docs:
+      - <https://docs.isaacsim.omniverse.nvidia.com/latest/index.html>
+    official_github:
+      - <https://github.com/isaac-sim/IsaacSim>
+    community_repos: []
+    maturity: official-open-source-with-licensing-caveats
+    trust_rule: use NVIDIA Isaac Sim docs and isaac-sim GitHub as official, while preserving licensing, binary dependency, and contribution caveats
+    checked_through: 2026-06-22
+    notes: GitHub visibility does not remove Isaac Sim license and NVIDIA Omniverse dependency constraints.
+  - id: isaac-lab
+    category: robot-learning-framework
+    official_docs:
+      - <https://github.com/isaac-sim/IsaacLab#readme>
+    official_github:
+      - <https://github.com/isaac-sim/IsaacLab>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Isaac Lab docs and isaac-sim/IsaacLab as official; verify Isaac Sim version compatibility before reproducing training examples
+    checked_through: 2026-06-22
+    notes: robot-learning framework built on Isaac Sim.
+  - id: newton
+    category: simulator
+    official_docs:
+      - <https://newton-physics.github.io/newton/stable/>
+    official_github:
+      - <https://github.com/newton-physics/newton>
+    community_repos: []
+    maturity: emerging-official
+    trust_rule: use Newton docs and newton-physics GitHub as official, but treat adoption guidance as emerging until local examples and release maturity are validated
+    checked_through: 2026-06-22
+    notes: GPU-accelerated physics engine source coverage.
+  - id: ros2
+    category: core-robotics-stack
+    official_docs:
+      - <https://docs.ros.org/en/rolling/>
+    official_github:
+      - <https://github.com/ros2/ros2>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use docs.ros.org and ros2 GitHub as official; verify ROS distro, REP, and package-release status before instructions
+    checked_through: 2026-06-22
+    notes: docs.ros.org may block automated readers, but remains the official docs source.
+  - id: moveit2
+    category: core-robotics-stack
+    official_docs:
+      - <https://moveit.ai/>
+    official_github:
+      - <https://github.com/moveit/moveit2>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use MoveIt docs and moveit/moveit2 as official; verify ROS distro and planning plugin versions before implementation claims
+    checked_through: 2026-06-22
+    notes: MoveIt 2 motion planning and manipulation stack.
+  - id: drake
+    category: dynamics-planning-foundation
+    official_docs:
+      - <https://drake.mit.edu/>
+    official_github:
+      - <https://github.com/RobotLocomotion/drake>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Drake docs and RobotLocomotion/drake as official; verify bindings, solver availability, and ROS2 support status by version
+    checked_through: 2026-06-22
+    notes: model-based design, dynamics, planning, and control toolbox.
+  - id: pinocchio
+    category: dynamics-planning-foundation
+    official_docs:
+      - <https://stack-of-tasks.github.io/pinocchio/>
+    official_github:
+      - <https://github.com/stack-of-tasks/pinocchio>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Stack-of-Tasks Pinocchio docs and GitHub as official; verify major-version API before dynamics code guidance
+    checked_through: 2026-06-22
+    notes: rigid-body dynamics algorithms and analytical derivatives.
+  - id: ruckig
+    category: dynamics-planning-foundation
+    official_docs:
+      - <https://docs.ruckig.com/>
+    official_github:
+      - <https://github.com/pantor/ruckig>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Ruckig docs and pantor/ruckig as official; verify community/pro feature boundaries before deployment recommendations
+    checked_through: 2026-06-22
+    notes: jerk-limited online trajectory generation.
+  - id: ompl
+    category: dynamics-planning-foundation
+    official_docs:
+      - <https://ompl.kavrakilab.org/>
+    official_github:
+      - <https://github.com/ompl/ompl>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use OMPL docs and ompl/ompl as official; distinguish OMPL planner library behavior from MoveIt integration behavior
+    checked_through: 2026-06-22
+    notes: Open Motion Planning Library source coverage.
+  - id: lerobot
+    category: robot-learning-framework
+    official_docs:
+      - <https://huggingface.co/docs/lerobot/index>
+    official_github:
+      - <https://github.com/huggingface/lerobot>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use Hugging Face LeRobot docs and huggingface/lerobot as official; verify hardware adapters, dataset format, and policy version before physical-robot guidance
+    checked_through: 2026-06-22
+    notes: real-world robotics learning framework and dataset/tooling source.
+  - id: maniskill
+    category: robot-learning-framework
+    official_docs:
+      - <https://maniskill.readthedocs.io/en/latest/>
+    official_github:
+      - <https://github.com/mani-skill/ManiSkill>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use ManiSkill docs and mani-skill GitHub as official; verify SAPIEN/GPU backend compatibility before benchmark or environment claims
+    checked_through: 2026-06-22
+    notes: manipulation benchmark and simulator framework.
+  - id: robosuite
+    category: robot-learning-framework
+    official_docs:
+      - <https://robosuite.ai/docs/overview.html>
+    official_github:
+      - <https://github.com/ARISE-Initiative/robosuite>
+    community_repos: []
+    maturity: mature-official
+    trust_rule: use robosuite docs and ARISE-Initiative/robosuite as official; verify MuJoCo version and controller support before implementation claims
+    checked_through: 2026-06-22
+    notes: MuJoCo-based robot-learning simulation framework.
+  - id: sapien-genesis
+    category: simulator
+    official_docs:
+      - <https://sapien.ucsd.edu/docs/latest/>
+      - <https://genesis-world.readthedocs.io/en/latest/>
+    official_github:
+      - <https://github.com/haosulab/SAPIEN>
+      - <https://github.com/Genesis-Embodied-AI/genesis-world>
+    community_repos: []
+    maturity: official-mixed-maturity
+    trust_rule: use SAPIEN and Genesis official docs/GitHub sources separately; do not merge API, physics, or rendering claims across them without version-specific verification
+    checked_through: 2026-06-22
+    notes: grouped first-pass registry entry because ManiSkill depends on SAPIEN while Genesis is a related emerging simulation platform.
+- Current high-signal per-run source subset:
+  - <https://www.universal-robots.com/developer/communication-protocol/ros-and-ros2-driver/>
+  - <https://frankarobotics.github.io/docs/>
+  - <https://github.com/Kinovarobotics/ros2_kortex>
+  - <https://github.com/lbr-stack/lbr_fri_ros2_stack>
+  - <https://github.com/agilexrobotics/piper_sdk>
+  - <https://github.com/isaac-sim/IsaacSim>
+  - <https://github.com/isaac-sim/IsaacLab>
+  - <https://newton-physics.github.io/newton/stable/>
+  - <https://github.com/huggingface/lerobot>
+
+Recent checked entries:
+
+| Date | Title | Source | Local relevance | Status |
+|---|---|---|---|---|
+| 2026-06-22 | Robotics ecosystem source registry added | <https://www.universal-robots.com/developer/communication-protocol/ros-and-ros2-driver/>; <https://github.com/UniversalRobots>; <https://frankarobotics.github.io/docs/>; <https://github.com/frankarobotics>; <https://github.com/Kinovarobotics/ros2_kortex>; <https://github.com/xArm-Developer/xarm_ros2>; <https://github.com/agilexrobotics/piper_sdk>; <https://github.com/agilexrobotics/piper_ros>; <https://docs.trossenrobotics.com/interbotix_xsarms_docs/>; <https://github.com/Interbotix>; <https://my.kuka.com/s/product/kuka-sunrisefri-25/01t1i000000tTEpAAM?language=en_US>; <https://github.com/lbr-stack/lbr_fri_ros2_stack>; <https://mujoco.readthedocs.io/en/stable/>; <https://github.com/google-deepmind/mujoco>; <https://gazebosim.org/libs/sim/>; <https://github.com/gazebosim/gz-sim>; <https://github.com/isaac-sim/IsaacSim>; <https://github.com/isaac-sim/IsaacLab>; <https://newton-physics.github.io/newton/stable/>; <https://github.com/newton-physics/newton>; <https://docs.ros.org/en/rolling/>; <https://github.com/ros2/ros2>; <https://moveit.ai/>; <https://github.com/moveit/moveit2>; <https://drake.mit.edu/>; <https://github.com/RobotLocomotion/drake>; <https://stack-of-tasks.github.io/pinocchio/>; <https://github.com/stack-of-tasks/pinocchio>; <https://docs.ruckig.com/>; <https://github.com/pantor/ruckig>; <https://ompl.kavrakilab.org/>; <https://github.com/ompl/ompl>; <https://huggingface.co/docs/lerobot/index>; <https://github.com/huggingface/lerobot>; <https://maniskill.readthedocs.io/en/latest/>; <https://github.com/mani-skill/ManiSkill>; <https://robosuite.ai/docs/overview.html>; <https://github.com/ARISE-Initiative/robosuite>; <https://sapien.ucsd.edu/docs/latest/>; <https://github.com/haosulab/SAPIEN>; <https://genesis-world.readthedocs.io/en/latest/>; <https://github.com/Genesis-Embodied-AI/genesis-world> | Adds source coverage for future robotics work without creating a new active skill. Official GitHub fields are restricted to vendor/project organizations; KUKA LBR community ROS2 support is recorded only under community_repos; Isaac Sim caveats and PiPER validation requirements are preserved. | checked |
