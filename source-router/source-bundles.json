@@ -1,11 +1,23 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "generated_at": "2026-06-22",
   "purpose": "Local source-router registry for proposal-only source recommendations during skill-sync runs.",
   "defaults": {
     "trigger_context": "skill-sync only",
     "local_repo_mode": "index-only",
-    "checked_through": "2026-06-22"
+    "checked_through": "2026-06-22",
+    "ros_scope_values": [
+      "ros1",
+      "ros2",
+      "non_ros",
+      "unknown"
+    ],
+    "source_reference_default": "reference-first; do not clone during proposal-only source recommendations",
+    "source_clone_default": "no-clone",
+    "clone_allowed_when": "only after the user task requires source inspection or implementation, and authority, license, target ROS distro, package branch/release, hardware model, and maintenance status are verified",
+    "ros2_recommendation_default": "for modern ROS2 robotics tasks, prefer ROS2 sources or the ROS2 subpath of mixed sources; never substitute ROS1 legacy sources for ROS2 unless explicitly framed as historical/protocol reference",
+    "community_repo_default": "community_repos are discovery/reference only; do not recommend cloning as an implementation baseline unless no official source exists and the user accepts local validation",
+    "rolling_docs_policy": "ROS Rolling docs are development references; use the target released distro docs for operational instructions"
   },
   "bundles": [
     {
@@ -41,23 +53,45 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/ros-controls/ros2_controllers": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
           "maturity": "mature-official",
-          "trust_rule": "Use as the first ROS 2 interface baseline for publishing force/torque state interfaces as WrenchStamped; verify ROS distro and controller version before operational guidance.",
+          "trust_rule": "Use as the first ROS 2 interface baseline for publishing force/torque state interfaces as WrenchStamped; verify target ROS distro and controller version before operational guidance. Rolling docs are development references.",
           "notes": "Includes sensor_filter_chain support in current rolling docs."
         },
         {
           "id": "ros-drivers-ati-netft",
           "title": "ATI Net F/T ROS driver",
-          "role": "ATI Net F/T driver baseline",
+          "role": "ATI Net F/T legacy driver baseline",
           "official_docs": [],
           "official_repos": [],
           "major_org_repos": [
             "https://github.com/ros-drivers/ati_netft_ros_driver"
           ],
           "community_repos": [],
+          "ros_generations": [
+            "ros1"
+          ],
+          "default_usage_mode": "framework_logic_reference",
+          "repo_policies": {
+            "https://github.com/ros-drivers/ati_netft_ros_driver": {
+              "ros_generation": "ros1",
+              "usage_mode": "framework_logic_reference",
+              "cache_policy": "never_clone_or_pull"
+            }
+          },
           "maturity": "mature-major-org-ros1",
-          "trust_rule": "Treat ros-drivers as a major ROS organization source, not ATI official; verify ROS version and protocol support before recommending it for a current ROS 2 stack.",
-          "notes": "Useful baseline for ATI NET/FT RDT over Ethernet; not a universal ATI SDK replacement."
+          "trust_rule": "Treat ros-drivers as a major ROS organization source, not ATI official. For ROS2 work, use this only as framework/protocol reference; do not clone or pull it as an implementation baseline.",
+          "notes": "Useful historical reference for ATI NET/FT RDT over Ethernet; repository is ROS1/catkin-era and not a current ROS2 baseline."
         },
         {
           "id": "bota-ft-stack",
@@ -75,8 +109,30 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "ros2",
+            "non_ros"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://gitlab.com/botasys/bota_driver": {
+              "ros_generation": "non_ros",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "index_only"
+            },
+            "https://gitlab.com/botasys/drivers/bota_driver_ros2_example": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            },
+            "https://gitlab.com/botasys/drivers/bota_driver_ros2_control_example": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
           "maturity": "mature-official",
-          "trust_rule": "Use Bota docs and Botasys GitLab as official; verify generation, communication interface, and ROS2 package version before local hardware instructions.",
+          "trust_rule": "Use Bota docs and Botasys GitLab as official. Prefer the ROS2 examples for current ROS2 work; verify generation, communication interface, and ROS2 package version before local hardware instructions.",
           "notes": "Bota docs cover C++, Python, and ROS2 driver paths."
         },
         {
@@ -91,8 +147,19 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/SCHUNK-SE-Co-KG/schunk_force_torque_sensor": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
           "maturity": "emerging-official",
-          "trust_rule": "Treat SCHUNK-SE-Co-KG GitHub as official; verify sensor model, Ethernet interface box, and lifecycle behavior before use.",
+          "trust_rule": "Treat SCHUNK-SE-Co-KG GitHub as official; verify sensor model, Ethernet interface box, target distro, and lifecycle behavior before use.",
           "notes": "Official ROS2 driver for SCHUNK FTS hardware."
         },
         {
@@ -110,12 +177,34 @@
             "https://github.com/nbfigueroa/robotiq_ft300_sensor",
             "https://github.com/panagelak/rq_fts_ros2_driver"
           ],
+          "ros_generations": [
+            "ros1",
+            "ros2"
+          ],
+          "default_usage_mode": "historical_context",
+          "repo_policies": {
+            "https://github.com/ros-industrial/robotiq": {
+              "ros_generation": "ros1",
+              "usage_mode": "historical_context",
+              "cache_policy": "never_clone_or_pull"
+            },
+            "https://github.com/nbfigueroa/robotiq_ft300_sensor": {
+              "ros_generation": "ros1",
+              "usage_mode": "historical_context",
+              "cache_policy": "never_clone_or_pull"
+            },
+            "https://github.com/panagelak/rq_fts_ros2_driver": {
+              "ros_generation": "ros2",
+              "usage_mode": "discovery_only",
+              "cache_policy": "index_only"
+            }
+          },
           "maturity": "legacy-mixed",
-          "trust_rule": "Use ROS wiki and ros-industrial as historical/major-org context; keep small ROS2 drivers as community sources unless vendor ownership is verified.",
+          "trust_rule": "Treat ROS wiki and ros-industrial/robotiq as historical ROS1 context only; the repo is not active vendor support. Treat ROS2 Robotiq drivers as community discovery sources unless vendor ownership and maintenance are verified.",
           "notes": "Good for discovery and legacy behavior, not a default modern ROS2 recommendation without local validation."
         }
       ],
-      "notes": "Source recommendations are proposal-only; physical sensor setup still needs local electrical, transport, frame, calibration, and safety validation."
+      "notes": "Mixed ROS1/ROS2 bundle. Prefer official ROS2/vendor sources for current ROS2 work; keep ATI/Robotiq ROS1 legacy sources as framework/protocol reference only. Clone default is no-clone; future pullable candidates must be ROS2 and still require distro, hardware, license, and maintenance checks."
     },
     {
       "id": "robotics.signal_filtering",
@@ -141,7 +230,7 @@
         {
           "id": "ros-filters",
           "title": "ROS filters",
-          "role": "ROS filter-chain baseline",
+          "role": "ROS2 filter-chain baseline",
           "official_docs": [
             "https://index.ros.org/p/filters/"
           ],
@@ -150,9 +239,20 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/ros/filters": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
           "maturity": "mature-official",
-          "trust_rule": "Use as the standard ROS filter-chain API baseline; verify ROS distro support and plugin availability before implementation guidance.",
-          "notes": "Provides a standardized interface for chaining filters from runtime parameters."
+          "trust_rule": "Use as the standard ROS2 filter-chain API baseline; verify ROS distro support and plugin availability before implementation guidance.",
+          "notes": "ROS Index currently tracks AMENT_CMAKE/ROS2 package releases."
         },
         {
           "id": "ros2-control-filter-chain",
@@ -167,8 +267,19 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/ros-controls/ros2_controllers": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
           "maturity": "mature-official",
-          "trust_rule": "Use for ROS2 controller-level filtering proposals; verify controller version and filter plugin configuration before code changes.",
+          "trust_rule": "Use for ROS2 controller-level filtering proposals; verify target controller version and filter plugin configuration before code changes. Rolling docs are development references.",
           "notes": "ForceTorqueSensorBroadcaster supports sensor_filter_chain; Chained Filter Controller wraps filter_chain for controller interfaces."
         },
         {
@@ -185,12 +296,23 @@
           ],
           "major_org_repos": [],
           "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "offline_analysis",
+          "repo_policies": {
+            "https://github.com/scipy/scipy": {
+              "ros_generation": "non_ros",
+              "usage_mode": "offline_analysis",
+              "cache_policy": "index_only"
+            }
+          },
           "maturity": "mature-official",
           "trust_rule": "Use for offline filter design, log analysis, and parameter exploration; do not treat SciPy examples as real-time robot control guidance without latency and stability validation.",
           "notes": "Useful for Butterworth/IIR/FIR analysis before translating parameters into ROS runtime filters."
         }
       ],
-      "notes": "Prefer ROS runtime filter chains for deployed robot paths and SciPy for offline analysis or parameter design."
+      "notes": "Mixed ROS2/non-ROS bundle. Use ROS2 filters/ros2_control for deployed ROS2 runtime paths; use SciPy only for offline filter design and log analysis. Clone default is no-clone unless code-level inspection is required and target distro/package version is verified."
     }
   ]
 }
