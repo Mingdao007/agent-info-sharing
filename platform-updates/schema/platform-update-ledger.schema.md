@@ -20,6 +20,7 @@ The ledger must include these source groups:
 - `openai`
 - `anthropic-claude`
 - `hermes-agent`
+- `superpowers`
 
 Each source group must include:
 
@@ -69,4 +70,3 @@ snapshot_role: fixed historical evidence, not an incremental update source
 - Social posts alone do not justify local architecture changes.
 - A direct source URL should be verified openable before being added as a
   normal public ledger link.
-

@@ -1,9 +1,9 @@
 # Skill Sync Platform Update Ledger
 
-Public canonical ledger for incremental OpenAI, Anthropic/Claude, and Hermes
-Agent platform update checks.
+Public canonical ledger for incremental OpenAI, Anthropic/Claude, Hermes
+Agent, and Superpowers platform update checks.
 
-Last run: `2026-06-20T17:44+08:00`
+Last run: `2026-06-22T15:12+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -275,3 +275,49 @@ Recent checked entries:
 | 2026-06-02 | Dashboard refresh-token sessions, Skills & Tools pane consolidation, and default streaming config discoverability | <https://github.com/NousResearch/hermes-agent/commit/c10ccaaf51a7146c7079e318cc20e4ab3f1a190d>; <https://github.com/NousResearch/hermes-agent/commit/a2b8e430e851bd7c77600fbafe3bc6cd5035e616>; <https://github.com/NousResearch/hermes-agent/commit/d78d77e46053e65cf8960760a1438a33553377ab> | Relevant as proposal-only comparison material for auth refresh flows, combined skills/tool management UI, and explicit streaming configuration. No local Codex skill, registry, or safety-gate write is justified by these commits alone. | checked |
 | 2026-06-02 | Incremental check: no release/tag newer than `v2026.5.29.2` | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Confirms no new release-level migration signal after the `2026-06-01` ledger boundary; only unreleased main-branch commits were considered as proposal-only signals. | checked |
 | 2026-06-01 | Hermes Agent source group added to skill-sync ledger | <https://hermes-agent.nousresearch.com/docs/llms.txt> | Relevant to future comparisons around self-improving skills, persistent memory, context files, subagent delegation, hooks, MCP, checkpoints, and agent runtime safety. Keep as proposal-only; do not migrate Hermes runtime state or auto-writing behavior into Codex without explicit approval. | checked |
+
+### superpowers
+
+- Coverage baseline:
+  - Public GitHub repository observed: `2026-06-22`
+  - First official source:
+    <https://github.com/obra/Superpowers>
+- Checked through: `2026-06-22`
+- Canonical source families:
+  - GitHub repository: <https://github.com/obra/Superpowers>
+  - README / install docs:
+    <https://github.com/obra/Superpowers#readme>
+  - Raw README:
+    <https://raw.githubusercontent.com/obra/Superpowers/main/README.md>
+  - Release notes:
+    <https://github.com/obra/Superpowers/blob/main/RELEASE-NOTES.md>
+  - GitHub releases/tags:
+    <https://github.com/obra/Superpowers/releases>
+    <https://github.com/obra/Superpowers/tags>
+  - Skills directory:
+    <https://github.com/obra/Superpowers/tree/main/skills>
+  - Codex plugin metadata:
+    <https://github.com/obra/Superpowers>
+  - Claude plugin metadata:
+    <https://github.com/obra/Superpowers/tree/main/.claude-plugin>
+  - Engineer / maintainer watchlist:
+    - obra / Superpowers maintainers
+      identity_status: verified
+      source_type: official_project_maintainer
+      evidence_url: <https://github.com/obra/Superpowers>
+      trust_rule: official repo, release notes, plugin metadata, and skills directory can inform proposal-only comparisons for agent skills, workflow methodology, TDD gates, and plugin packaging; do not import Superpowers methodology, hooks, or skill behavior into local Codex without explicit user approval and local validation
+      notes: project-level maintainer identity is verified through the public GitHub repository; individual social or third-party commentary still needs separate verification.
+- Current high-signal per-run source subset:
+  - <https://github.com/obra/Superpowers>
+  - <https://raw.githubusercontent.com/obra/Superpowers/main/README.md>
+  - <https://github.com/obra/Superpowers/blob/main/RELEASE-NOTES.md>
+  - <https://github.com/obra/Superpowers/tree/main/skills>
+  - <https://github.com/obra/Superpowers>
+  - <https://github.com/obra/Superpowers/releases>
+  - <https://github.com/obra/Superpowers/tags>
+
+Recent checked entries:
+
+| Date | Title | Source | Local relevance | Status |
+|---|---|---|---|---|
+| 2026-06-22 | Superpowers source group added to skill-sync ledger | <https://github.com/obra/Superpowers> | Relevant as proposal-only comparison material for agentic skills methodology, multi-harness plugin packaging, subagent-driven development, TDD workflow gates, and Codex/Claude/Cursor/Gemini skill portability. Do not import Superpowers methodology, hooks, or skill behavior into local Codex without explicit approval and local validation. | checked |

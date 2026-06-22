@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 
-REQUIRED_GROUPS = ("openai", "anthropic-claude", "hermes-agent")
+REQUIRED_GROUPS = ("openai", "anthropic-claude", "hermes-agent", "superpowers")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 FORBIDDEN_PATTERNS = (
     re.compile(r"/home/[A-Za-z0-9_.-]+"),
@@ -104,4 +104,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

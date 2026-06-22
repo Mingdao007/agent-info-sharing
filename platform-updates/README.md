@@ -8,6 +8,7 @@ Tracked source groups:
 - OpenAI and Codex
 - Anthropic, Claude, and Claude Code
 - Hermes Agent by Nous Research
+- Superpowers by obra
 
 The ledger tracks:
 
@@ -35,4 +36,3 @@ The ledger tracks:
 
 Machine-local fallbacks may exist, but this public ledger is the canonical
 shared source.
-
