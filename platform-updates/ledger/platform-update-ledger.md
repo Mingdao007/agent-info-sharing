@@ -3,7 +3,7 @@
 Public canonical ledger for incremental OpenAI, Anthropic/Claude, Hermes
 Agent, and Superpowers platform update checks.
 
-Last run: `2026-06-25T20:40+08:00`
+Last run: `2026-07-02T10:31+08:00`
 Default local implication lookback: `60d`
 
 ## Publication Contract
@@ -40,7 +40,7 @@ notes, or reproduction.
     early January 2016.
   - First official source:
     <https://openai.com/index/introducing-openai/>
-- Checked through: `2026-06-25`
+- Checked through: `2026-07-02`
 - Canonical source families:
   - News / historical blog archive: <https://openai.com/news/>
   - RSS: <https://openai.com/news/rss.xml>
@@ -83,6 +83,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-07-02 | Incremental check through Jul 2: OpenAI API Jun 23/24 updates, Codex CLI 0.142.2-0.142.5, and no newer Apps SDK entry after Jun 5 | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/changelog>; <https://developers.openai.com/apps-sdk/changelog> | API updates add Safety Usage Dashboard context keyed by `safety_identifier` and refresh `chat-latest`; Codex CLI updates include MCP tool-search default behavior, macOS proxy support, plugin logo metadata, remote path-format fixes, image-input validation, safety-buffering UI, Bedrock credential guidance, PowerShell approval hardening, and a WebSocket trace-log privacy fix. Relevant as proposal-only context for local source routing, plugin metadata, remote/MCP diagnostics, safety-log hygiene, and credential/error messaging. No local skill registry, lifecycle, MCP, or permission mutation is authorized by this scan alone. | checked |
 | 2026-06-24 | OpenAI API changelog: Safety Usage Dashboard and `chat-latest` snapshot update | <https://developers.openai.com/api/docs/changelog> | Relevant to future safety-monitoring and model-routing guidance. Keep as proposal-only evidence; no local Codex skill, registry, MCP, or permission architecture mutation without a specific user request. | checked |
 | 2026-06-22 | Codex changelog after Jun 11: Record & Replay, thread handoff, SSH connection deep links, Browser Use routing, workspace file/path UX, MCP approval choices, and subagent progress visibility | <https://developers.openai.com/codex/changelog> | Relevant to future skill-capture, handoff, SSH diagnostics, browser reliability, local path prompting, approval-state UX, and subagent observability proposals. Do not change local skill packages or runtime policy automatically. | checked |
 | 2026-06-20 | Incremental check through Jun 20: no newer OpenAI API changelog entry after Jun 9; Codex changelog has post-Jun 11 app and CLI updates | <https://developers.openai.com/api/docs/changelog>; <https://developers.openai.com/codex/changelog> | The API changelog still showed Jun 9 Responses web-search image results as the newest June 2026 API entry. Codex app/CLI updates on Jun 15 and Jun 18 are relevant as proposal-only evidence for local app/CLI behavior, plugin MCP exposure, remote executor paths, hook trust handling, terminal backgrounding, and skill/marketplace routing. No immediate local skill registry, lifecycle, MCP, or permission mutation is authorized by this scan alone. | checked |
@@ -108,7 +109,7 @@ Recent checked entries:
   - Andrej Karpathy publicly reported joining Anthropic: `2026-05-19`
   - First official source:
     <https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems>
-- Checked through: `2026-06-25`
+- Checked through: `2026-07-02`
 - Canonical source families:
   - Anthropic Newsroom: <https://www.anthropic.com/news>
   - Anthropic Research: <https://www.anthropic.com/research>
@@ -179,6 +180,8 @@ Recent checked entries:
 - Current high-signal per-run source subset:
   - <https://code.claude.com/docs/en/changelog>
   - <https://code.claude.com/docs/en/whats-new/>
+  - <https://code.claude.com/docs/en/whats-new/2026-w26>
+  - <https://code.claude.com/docs/en/whats-new/2026-w25>
   - <https://code.claude.com/docs/en/whats-new/2026-w22>
   - <https://code.claude.com/docs/en/whats-new/2026-w21>
   - <https://code.claude.com/docs/en/whats-new/2026-w20>
@@ -192,6 +195,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-07-02 | Incremental check through Jul 2: Claude Code Week 26 / 2.1.185-2.1.193 and changelog updates after Jun 20 | <https://code.claude.com/docs/en/changelog>; <https://code.claude.com/docs/en/whats-new/> | Relevant as proposal-only comparison material for CLI-side MCP login/logout, SSH-friendly MCP auth, shell-mode command-output explanations, `/rewind` recovery, background-subagent permission surfacing, plugin Skills visibility, teammate effort inheritance, workflow schema-failure aborts, skill frontmatter compatibility, malformed frontmatter fallback behavior, and unattended retry watchdog design. Existing local Codex permission, subagent, MCP, and skill metadata gates remain unchanged without explicit follow-up approval. | checked |
 | 2026-06-24 | Claude Code 2.1.191: `/rewind`, persistent permission approvals, sandbox network permission memory, MCP retry reliability, and managed-settings refresh fixes | <https://code.claude.com/docs/en/changelog> | Relevant comparison material for local permission-prompt fatigue, resumable conversations, MCP transient-error handling, and stale managed-config diagnostics. Proposal-only; no Codex config, skill, or permission-rule mutation. | checked |
 | 2026-06-23 | Claude Code 2.1.187/2.1.186: sandbox credential blocking, org model restrictions, CLI MCP login/logout, subagent depth fixes, and skill frontmatter tolerance | <https://code.claude.com/docs/en/changelog> | Relevant comparison material for secret isolation, model allowlist policy, headless MCP auth, nested-agent safety, and skill metadata resilience. Proposal-only; no direct local registry or skill-package write. | checked |
 | 2026-06-20 | Incremental check through Jun 20: Claude Code changelog reachable through 2.1.183; What's New root still provides weekly digest context | <https://code.claude.com/docs/en/changelog>; <https://code.claude.com/docs/en/whats-new/> | Relevant as proposal-only comparison material for local subagent depth/observability, permission modes, fallback-model design, safe-mode troubleshooting, and version-normalization hygiene. No Codex skill registry, lifecycle, or permission write is authorized by this scan alone. | checked |
@@ -220,7 +224,7 @@ Recent checked entries:
   - First official sources:
     <https://github.com/NousResearch/hermes-agent>
     <https://hermes-agent.nousresearch.com/docs/>
-- Checked through: `2026-06-25`
+- Checked through: `2026-07-02`
 - Canonical source families:
   - Official docs root: <https://hermes-agent.nousresearch.com/docs/>
   - LLM-readable docs index:
@@ -273,6 +277,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-07-01 | Hermes Agent v0.18.0 / v2026.7.1 Judgment Release | <https://github.com/NousResearch/hermes-agent/releases>; <https://github.com/NousResearch/hermes-agent/tags> | Relevant as proposal-only comparison material for Mixture-of-Agents selection, agent self-verification, `/learn` and `/journey` workflow surfaces, scale-to-zero gateway behavior, Google Vertex AI support, and high-priority backlog burn-down. Do not adopt Hermes runtime behavior, state trees, messaging gateways, model routers, or auto-writing loops into local Codex without explicit user approval and local safety review. | checked |
 | 2026-06-25 | Incremental check: no Hermes release newer than v2026.6.19 found | <https://github.com/NousResearch/hermes-agent/releases>; <https://hermes-agent.nousresearch.com/docs/llms.txt> | Confirms the Jun 19 Reach Release is the latest release-level signal observed in this pass. Continue treating Hermes runtime features as proposal-only comparison material. | checked |
 | 2026-06-19 | Hermes Agent v0.17.0 / v2026.6.19 Reach Release | <https://github.com/NousResearch/hermes-agent/releases/tag/v2026.6.19>; <https://github.com/NousResearch/hermes-agent/tags> | Relevant as proposal-only comparison material for iMessage/WhatsApp/Telegram reach, async subagents, image editing, dashboard profile builders, memory tool upgrades, and curator cost optimization. Do not adopt Hermes runtime behavior, state trees, messaging gateways, or auto-writing loops into local Codex without explicit user approval and local safety review. | checked |
 | 2026-06-16 | Hermes backup tags include OpenTUI parser cache and remote grammar fetch refactors | <https://github.com/NousResearch/hermes-agent/tags> | Relevant only as low-confidence implementation context for UI parser cache and graceful fallback patterns. Because these are backup/pre-release tags rather than the main release line, keep as discovery-only and do not use them to justify local architecture mutation. | checked |
@@ -290,7 +295,7 @@ Recent checked entries:
   - Public GitHub repository observed: `2026-06-22`
   - First official source:
     <https://github.com/obra/Superpowers>
-- Checked through: `2026-06-22`
+- Checked through: `2026-07-02`
 - Canonical source families:
   - GitHub repository: <https://github.com/obra/Superpowers>
   - README / install docs:
@@ -328,6 +333,7 @@ Recent checked entries:
 
 | Date | Title | Source | Local relevance | Status |
 |---|---|---|---|---|
+| 2026-07-02 | Incremental check through Jul 2: latest release remains v6.0.3; README now confirms Codex and Claude plugin marketplace installation surfaces | <https://github.com/obra/Superpowers>; <https://github.com/obra/Superpowers/releases>; <https://github.com/obra/Superpowers/blob/main/RELEASE-NOTES.md> | Relevant as proposal-only comparison material for subagent-driven development scratch workspace placement, Codex/Claude marketplace packaging, harness-portable plugin install surfaces, and review-led TDD methodology. Do not import Superpowers methodology, hooks, scratch layout, or skill behavior into local Codex without explicit approval and local validation. | checked |
 | 2026-06-22 | Superpowers source group added to skill-sync ledger | <https://github.com/obra/Superpowers> | Relevant as proposal-only comparison material for agentic skills methodology, multi-harness plugin packaging, subagent-driven development, TDD workflow gates, and Codex/Claude/Cursor/Gemini skill portability. Do not import Superpowers methodology, hooks, or skill behavior into local Codex without explicit approval and local validation. | checked |
 
 ### robotics-ecosystem
