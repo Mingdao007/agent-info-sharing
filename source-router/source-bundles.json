@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-07-03",
   "purpose": "Local source-router registry for proposal-only source recommendations during skill-sync runs.",
   "defaults": {
     "trigger_context": "skill-sync only",
@@ -31,11 +31,17 @@
         "force-torque",
         "ft sensor",
         "f/t sensor",
+        "actual_TCP_force",
+        "kunwei",
+        "kwr75",
         "netft",
+        "onrobot hex",
         "robotiq",
         "schunk",
         "six axis force",
         "torque sensor",
+        "urcap registers",
+        "zero drift",
         "wrench"
       ],
       "recommended_when": "The session discusses force/torque sensors, WrenchStamped data, robot contact force measurement, ATI Net F/T, Bota, SCHUNK, Robotiq, or ROS2 force/torque broadcasting.",
@@ -313,6 +319,353 @@
         }
       ],
       "notes": "Mixed ROS2/non-ROS bundle. Use ROS2 filters/ros2_control for deployed ROS2 runtime paths; use SciPy only for offline filter design and log analysis. Clone default is no-clone unless code-level inspection is required and target distro/package version is verified."
+    },
+    {
+      "id": "robotics.universal_robots_rtde_tp",
+      "title": "Universal Robots RTDE, URScript, and Teach Pendant package sources",
+      "domain": "robotics",
+      "trigger_terms": [
+        ".urp",
+        "cachedcontents",
+        "installationrelativepath",
+        "polyscope",
+        "programs directory",
+        "rtde",
+        "rtde bridge",
+        "script node",
+        "teach pendant",
+        "tp package",
+        "universal robots rtde",
+        "ur rtde",
+        "ur script",
+        "urprogram",
+        "urscript"
+      ],
+      "recommended_when": "The session discusses Universal Robots RTDE, URScript, controller /programs delivery, PolyScope Teach Pendant programs, .urp/.script/.txt packages, or package read-back semantics.",
+      "checked_through": "2026-07-03",
+      "sources": [
+        {
+          "id": "universal-robots-rtde-guide",
+          "title": "Universal Robots RTDE Guide",
+          "role": "vendor RTDE protocol baseline",
+          "official_docs": [
+            "https://docs.universal-robots.com/tutorials/communication-protocol-tutorials/rtde-guide.html"
+          ],
+          "official_repos": [],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {},
+          "maturity": "mature-official",
+          "trust_rule": "Use Universal Robots docs as the first RTDE protocol authority; verify target robot software version and recipe fields before operational guidance.",
+          "notes": "Covers controller RTDE synchronization and field semantics. It is protocol documentation, not a local bench acceptance gate."
+        },
+        {
+          "id": "universal-robots-urscript-docs",
+          "title": "Universal Robots URScript documentation",
+          "role": "vendor URScript language baseline",
+          "official_docs": [
+            "https://www.universal-robots.com/developer/urscript/",
+            "https://www.universal-robots.com/manuals/"
+          ],
+          "official_repos": [
+            "https://github.com/UniversalRobots/URScript_Examples"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/UniversalRobots/URScript_Examples": {
+              "ros_generation": "non_ros",
+              "usage_mode": "framework_logic_reference",
+              "cache_policy": "index_only"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use vendor URScript docs/manuals for language semantics. Treat example repositories as reference material and still validate generated package bytes locally.",
+          "notes": "Good for URScript syntax and motion primitive semantics such as speedl/speedj, not for bench-specific safety gates."
+        },
+        {
+          "id": "universal-robots-client-library",
+          "title": "Universal Robots Client Library",
+          "role": "official client library and RTDE implementation reference",
+          "official_docs": [
+            "https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/ur_client_library/doc/index.html",
+            "https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/ur_client_library/doc/examples/rtde_client.html"
+          ],
+          "official_repos": [
+            "https://github.com/UniversalRobots/Universal_Robots_Client_Library"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "ros2",
+            "non_ros"
+          ],
+          "default_usage_mode": "framework_logic_reference",
+          "repo_policies": {
+            "https://github.com/UniversalRobots/Universal_Robots_Client_Library": {
+              "ros_generation": "ros2",
+              "usage_mode": "framework_logic_reference",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use as the official C++ implementation reference for UR interfaces and RTDE clients. Before pull/use, verify branch, release, target robot software, and license.",
+          "notes": "Serves as a foundation for UR ROS drivers; source-router output does not authorize controller access or live motion."
+        }
+      ],
+      "notes": "Vendor-official Universal Robots bundle. Use it to start RTDE/URScript/PolyScope package research, but local TP package delivery still requires local gate, upload, fetch-back, and SHA/read-back verification."
+    },
+    {
+      "id": "robotics.universal_robots_ros2_control",
+      "title": "Universal Robots ROS 2 control and External Control sources",
+      "domain": "robotics",
+      "trigger_terms": [
+        "controller_manager",
+        "external control urcap",
+        "forward_velocity_controller",
+        "headless ros2",
+        "ros2 control",
+        "scaled_joint_trajectory_controller",
+        "teach pendant mode",
+        "universal robots ros 2",
+        "universal robots ros2",
+        "ur ros2 driver",
+        "ur_robot_driver"
+      ],
+      "recommended_when": "The session discusses Universal Robots ROS 2 driver setup, ros2_control controllers, headless/Teach Pendant modes, External Control URCap, or controller_manager behavior.",
+      "checked_through": "2026-07-03",
+      "sources": [
+        {
+          "id": "universal-robots-ros2-driver",
+          "title": "Universal Robots ROS 2 Driver",
+          "role": "official ROS2 driver baseline",
+          "official_docs": [
+            "https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/"
+          ],
+          "official_repos": [
+            "https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use UniversalRobots ROS2 driver docs/repo as the official ROS2 baseline. Verify ROS distro, robot software version, calibration, launch mode, and URCap state before operational guidance.",
+          "notes": "Covers driver architecture, launch paths, operation modes, and controller integration."
+        },
+        {
+          "id": "universal-robots-external-control-urcap",
+          "title": "Universal Robots External Control URCap",
+          "role": "official External Control URCap source",
+          "official_docs": [],
+          "official_repos": [
+            "https://github.com/UniversalRobots/Universal_Robots_ExternalControl_URCap"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "ros2",
+            "ros1"
+          ],
+          "default_usage_mode": "framework_logic_reference",
+          "repo_policies": {
+            "https://github.com/UniversalRobots/Universal_Robots_ExternalControl_URCap": {
+              "ros_generation": "ros2",
+              "usage_mode": "framework_logic_reference",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use as the official URCap source for External Control behavior. Still verify installed URCap version and PolyScope configuration on the bench before live use.",
+          "notes": "Supports CB3/e-Series ROS, ROS2, Isaac SDK, and UR client-library workflows."
+        },
+        {
+          "id": "ros2-control-core",
+          "title": "ros2_control core",
+          "role": "ROS2 controller framework baseline",
+          "official_docs": [
+            "https://control.ros.org/rolling/index.html"
+          ],
+          "official_repos": [
+            "https://github.com/ros-controls/ros2_control",
+            "https://github.com/ros-controls/ros2_controllers"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "ros2"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/ros-controls/ros2_control": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            },
+            "https://github.com/ros-controls/ros2_controllers": {
+              "ros_generation": "ros2",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use ros-controls docs/repos for controller framework semantics; verify target released distro rather than relying only on Rolling docs.",
+          "notes": "Useful for controller_manager and controller interface questions around UR ROS2 driver workflows."
+        }
+      ],
+      "notes": "Official Universal Robots plus ros-controls bundle. Use for ROS2 control architecture and setup research; bench launch, TP Play, and motion remain separate UR10e live gates."
+    },
+    {
+      "id": "robotics.rnn_jacobian_force_motion_control",
+      "title": "Robot Jacobian, QP, and force-motion control sources",
+      "domain": "robotics",
+      "trigger_terms": [
+        "damped least squares",
+        "dls solver",
+        "finite time convergence",
+        "force motion control",
+        "inverse kinematics",
+        "jacobian",
+        "jacobian velocity",
+        "jacobian rnn",
+        "pinocchio",
+        "qp velocity limits",
+        "quadratic program",
+        "rnn jacobian",
+        "task space inverse dynamics"
+      ],
+      "recommended_when": "The session discusses robot Jacobians, inverse kinematics, DLS/QP velocity limits, RNN control claims, or force-motion control theory/implementation boundaries.",
+      "checked_through": "2026-07-03",
+      "sources": [
+        {
+          "id": "stack-of-tasks-pinocchio",
+          "title": "Pinocchio",
+          "role": "kinematics and dynamics library baseline",
+          "official_docs": [
+            "https://stack-of-tasks.github.io/pinocchio/"
+          ],
+          "official_repos": [
+            "https://github.com/stack-of-tasks/pinocchio"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "current_implementation_baseline",
+          "repo_policies": {
+            "https://github.com/stack-of-tasks/pinocchio": {
+              "ros_generation": "non_ros",
+              "usage_mode": "current_implementation_baseline",
+              "cache_policy": "index_only"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use as a high-trust kinematics/dynamics implementation reference; validate frame conventions, model loading, and Jacobian frame before using results in robot control.",
+          "notes": "Good for Jacobian and rigid-body computation references. It does not prove any specific RNN controller claim."
+        },
+        {
+          "id": "osqp-solver",
+          "title": "OSQP",
+          "role": "convex QP solver baseline",
+          "official_docs": [
+            "https://osqp.org/docs/"
+          ],
+          "official_repos": [
+            "https://github.com/osqp/osqp"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "offline_analysis",
+          "repo_policies": {
+            "https://github.com/osqp/osqp": {
+              "ros_generation": "non_ros",
+              "usage_mode": "offline_analysis",
+              "cache_policy": "index_only"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use for offline QP feasibility checks and solver behavior references; do not assume real-time safety without local timing and numerical validation.",
+          "notes": "Useful for box-constrained velocity feasibility replay and oracle comparisons."
+        },
+        {
+          "id": "qpsolvers-python",
+          "title": "qpsolvers",
+          "role": "Python QP interface reference",
+          "official_docs": [
+            "https://qpsolvers.github.io/qpsolvers/"
+          ],
+          "official_repos": [
+            "https://github.com/qpsolvers/qpsolvers"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "non_ros"
+          ],
+          "default_usage_mode": "offline_analysis",
+          "repo_policies": {
+            "https://github.com/qpsolvers/qpsolvers": {
+              "ros_generation": "non_ros",
+              "usage_mode": "offline_analysis",
+              "cache_policy": "index_only"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use as an offline Python QP interface reference. Solver choice, convexity, and feasibility diagnostics still require local tests.",
+          "notes": "Useful for repeatable oracle scripts and compact feasibility fixtures."
+        },
+        {
+          "id": "stack-of-tasks-tsid",
+          "title": "Task Space Inverse Dynamics",
+          "role": "task-space optimization control reference",
+          "official_docs": [
+            "https://gepetto.github.io/doc/tsid/doxygen-html/index.html",
+            "https://index.ros.org/p/tsid/"
+          ],
+          "official_repos": [
+            "https://github.com/stack-of-tasks/tsid"
+          ],
+          "major_org_repos": [],
+          "community_repos": [],
+          "ros_generations": [
+            "ros2",
+            "non_ros"
+          ],
+          "default_usage_mode": "framework_logic_reference",
+          "repo_policies": {
+            "https://github.com/stack-of-tasks/tsid": {
+              "ros_generation": "ros2",
+              "usage_mode": "framework_logic_reference",
+              "cache_policy": "pullable_if_future_cache_exists"
+            }
+          },
+          "maturity": "mature-official",
+          "trust_rule": "Use as a task-space optimization control reference; verify target build, robot model, and release before any local implementation dependency.",
+          "notes": "Provides a structured baseline for task-space control vocabulary. It is not a substitute for reading the specific RNN/finite-time control paper."
+        }
+      ],
+      "notes": "Robotics theory/implementation source starting point. Use these for kinematics, QP, and task-space control references; paper-specific RNN, finite-time convergence, or force-control claims still require source-grounded literature review."
     }
   ]
 }
